@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+<span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np</span>
+<span class="s0">from </span><span class="s1">pandas </span><span class="s0">import </span><span class="s1">DataFrame </span><span class="s0">as </span><span class="s1">df</span>
+<span class="s1">print(</span><span class="s2">'Перемести ваш файл с имеющимися заголовками в директорию с проектом'</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">'Пример входящего файла, количество столбцов и строк может быть любым(файл primer.csv в директории проекта)'</span><span class="s1">)</span>
+<span class="s1">b = pd.read_csv(</span><span class="s2">'primer.csv'</span><span class="s0">, </span><span class="s1">delimiter=</span><span class="s2">','</span><span class="s1">)</span>
+<span class="s1">b = pd.DataFrame(b)</span>
+<span class="s1">print(b</span><span class="s0">,</span><span class="s2">'</span><span class="s0">\r\n</span><span class="s2">'</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">'Введите название файла, например file.csv(только csv файлы)'</span><span class="s1">)</span>
+<span class="s1">name_file=input()</span>
+<span class="s1">a = pd.read_csv(name_file</span><span class="s0">, </span><span class="s1">delimiter=</span><span class="s2">','</span><span class="s1">)</span>
+<span class="s1">df2 = pd.DataFrame(a)</span>
+<span class="s1">df2_1=df.sort_index(df2</span><span class="s0">,</span><span class="s1">axis=</span><span class="s3">1</span><span class="s0">, </span><span class="s1">ascending=</span><span class="s0">False</span><span class="s1">)</span>
+<span class="s1">print(df2_1</span><span class="s0">,</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s2">'</span><span class="s0">\r\n</span><span class="s2">Введите названия столбца по которому произойдёт фильтрация.</span><span class="s0">\r\n</span><span class="s2">Произойдёт '</span>
+      <span class="s2">'группировка и суммирование по этому значению'</span><span class="s1">)</span>
+<span class="s1">filtr_stolbec=input()</span>
+<span class="s1">df3= df.groupby(df2</span><span class="s0">, </span><span class="s1">by=filtr_stolbec).sum()</span>
+<span class="s1">print(df3)</span>
+
+
+<span class="s4">##Блок кода для ручного ввода таблицы</span>
+<span class="s4">#import pandas as pd</span>
+<span class="s4">#import numpy as np</span>
+<span class="s4">#from pandas import DataFrame as df</span>
+<span class="s4">##Водить сюда в том же формате^^</span>
+<span class="s4">#df2= pd.DataFrame({'tovar':['banan','hleb','banan','hleb'],'count':[11,12,13,14],'date':['2022-03-07', '2022-03-07', '2022-03-08','2022-03-08']})</span>
+<span class="s4">##Водить сюда в том же формате^^</span>
+<span class="s4">##Значение перед квадратными скобками - имя столбца по которому будет отрабатывать фильтрация из блока ниже</span>
+<span class="s4">#df2_1=df.sort_index(df2,axis=1, ascending=False)</span>
+<span class="s4">#print(df2_1,)</span>
+<span class="s4">#print('\r\nВведите названия столбца по которому произойдёт фильтрация.\r\nПроизойдёт'</span>
+<span class="s4">#      'группировка и суммирование по этому значению')</span>
+<span class="s4">#filtr_stolbec=input()</span>
+<span class="s4">#df3= df.groupby(df2, by=filtr_stolbec).sum()</span>
+<span class="s4">#print(df3)</span></pre>
+</body>
+</html>
